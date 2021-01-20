@@ -10,7 +10,6 @@ $errors = array();
 $username = "";
 $email = "";
 
-
 //---------------------------------------------------------------------------------------------------------//
 // If SIGN-UP button is clicked
 if(isset($_POST['signup-btn']))
@@ -40,7 +39,24 @@ if(isset($_POST['signup-btn']))
     {
         $errors['password'] = "Passwords do not match!";
     }
+//---------------------------------------------------------------------------------------------------------//
+    $usernameQuery = "SELECT * FROM users WHERE username=? LIMIT 1";
 
+    //PREPARED STATEMENT for the email
+    $stmt = $conn->prepare($usernameQuery);
+    $stmt->bind_param('s', $username);
+    $stmt->execute();
+
+    $result = $stmt->get_result();
+    $usercount = $result->num_rows;
+    $stmt->close();
+
+    if($usercount > 0)
+    {
+        $errors['username'] = "Username already existed!";
+    }
+//---------------------------------------------------------------------------------------------------------//    
+//---------------------------------------------------------------------------------------------------------//
     $emailQuery = "SELECT * FROM users WHERE email=? LIMIT 1";
 
     //PREPARED STATEMENT for the email
@@ -56,6 +72,8 @@ if(isset($_POST['signup-btn']))
     {
         $errors['email'] = "E-mail already existed!";
     }
+//---------------------------------------------------------------------------------------------------------//
+
     //Checking the Sign up form if how many errors
     if(count($errors) === 0)
     {
@@ -102,7 +120,7 @@ if(isset($_POST['login-btn']))
         $errors['password'] = "Password is Required!";
     }
 
-    //Check if there is an error
+    //Output if there is no error
     if(count($errors) === 0)
     {    
         $sql = "SELECT * FROM users WHERE email=? OR username=? LIMIT 1";
