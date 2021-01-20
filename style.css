@@ -1,0 +1,31 @@
+body {
+    background-image: url(images/arcadebg.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 110%;
+}
+.form-div {
+    margin: 50px auto 50px;
+    border: 1px solid rgb(168, 208, 241);
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.600);
+    color:rgb(163, 208, 245);
+    font-size:1.1em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.form-div.login{
+    margin-top: 100px;
+}
+
+.btn-block {
+    margin: 10px auto;
+    width: 100%;
+}
+
+form h3{
+    padding: 10px;
+}
+
+form p {
+    font-size: 0.89em;
+}
