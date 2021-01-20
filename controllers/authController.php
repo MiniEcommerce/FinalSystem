@@ -131,10 +131,12 @@ if(isset($_POST['login-btn']))
 //---------------------------------------------------------------------------------------------------------//
 //---------------------------------------------------------------------------------------------------------//
 
-if(isset($_GET['logout']))
+if(isset($_GET['Logout']))
 {
     session_destroy();
     unset($_SESSION['id']);
     unset($_SESSION['username']);
     unset($_SESSION['email']);
+    header('location: login.php');
+    exit();
 }
