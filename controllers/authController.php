@@ -48,14 +48,13 @@ if(isset($_POST['signup-btn']))
     $stmt->execute();
 
     $result = $stmt->get_result();
-    $usercount = $result->num_rows;
+    $userDB = $result->fetch_assoc();
     $stmt->close();
 
-    if($usercount > 0)
+    if($userDB['username'] == $username)
     {
         $errors['username'] = "Username already existed!";
-    }
-//---------------------------------------------------------------------------------------------------------//    
+    }   
 //---------------------------------------------------------------------------------------------------------//
     $emailQuery = "SELECT * FROM users WHERE email=? LIMIT 1";
 
@@ -65,10 +64,10 @@ if(isset($_POST['signup-btn']))
     $stmt->execute();
     
     $result = $stmt->get_result();
-    $usercount = $result->num_rows;
+    $userDB = $result->fetch_assoc();
     $stmt->close();
 
-    if($usercount > 0)
+    if($userDB['email'] == $email)
     {
         $errors['email'] = "E-mail already existed!";
     }
@@ -92,7 +91,7 @@ if(isset($_POST['signup-btn']))
             $_SESSION['username'] = $username;
             $_SESSION['email'] = $email;
 
-            header("location: index.php");
+            header("location: login.php");
             exit();
 
         }else {
