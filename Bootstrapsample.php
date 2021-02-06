@@ -6,25 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
 </head>
 <body style="height:1500px">
 
 <! --Navigation Bar--> 
-<nav class="navbar navbar-inverse fixed-top bg-dark">
+<nav class="navbar navbar-inverse fixed-top">
   <div class="container-fluid">
   <div class = "navbar-header">
       <a class = "navbar-brand">
-        <img class="img-responsive" src="IMG/Logo.png" alt="GameKioskLogo" width="80" height="80">
+        <img class="img-responsive" src="IMG/Logo.png" alt="GameKioskLogo" width="10%" height="auto">
       </a>
     </div>
     <ul class = "nav">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Shop</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Log-out</a></li>
+      <li style = "margin-right: 10px"><a href="#">Home</a></li>
+      <li style = "margin-right: 10px"><a href="#">Shop</a></li>
+      <li style = "margin-right: 10px"><a href="#">About</a></li>
+      <li style = "margin-right: 10px"><a href="#">Log-out</a></li>
     </ul>
     
   </div>
