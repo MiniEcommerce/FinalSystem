@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -12,23 +13,22 @@
 <body style="height:1500px">
 
 <! --Navigation Bar--> 
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-inverse fixed-top bg-dark">
   <div class="container-fluid">
-    <div class="navbar-header">
-        <a href="IMG/Logo.png" target="_blank">
-        <img class="img-responsive" src="IMG/Logo.png" alt="GameKioskLogo" width="180" height="180">
-        </a>
+  <div class = "navbar-header">
+      <a class = "navbar-brand">
+        <img class="img-responsive" src="IMG/Logo.png" alt="GameKioskLogo" width="80" height="80">
+      </a>
     </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
+    <ul class = "nav">
+      <li><a href="#">Home</a></li>
       <li><a href="#">Shop</a></li>
       <li><a href="#">About</a></li>
       <li><a href="#">Log-out</a></li>
     </ul>
+    
   </div>
 </nav>
-
-
 
 <! --Home--> 
 <div class="jumbotron text-center">
