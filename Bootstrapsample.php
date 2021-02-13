@@ -125,6 +125,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
+<<<<<<< HEAD:Boostrapsample.php
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -136,6 +137,18 @@
   <div class = "navbar-header">
       <a class = "navbar-brand">
         <img class="img-responsive" src="IMG/Logo.png" alt="GameKioskLogo" width="80" height="80">
+=======
+  
+</head>
+<body style="height:1500px">
+
+<! --Navigation Bar--> 
+<nav class="navbar navbar-inverse fixed-top">
+  <div class="container-fluid">
+  <div class = "navbar-header">
+      <a class = "navbar-brand">
+        <img class="img-responsive" src="IMG/Logo.png" alt="GameKioskLogo" width="10%" height="auto">
+>>>>>>> c4c8c2aee6f41cb8d831f087775a88f7decf6f0c:Bootstrapsample.php
       </a>
     </div>
     <ul class = "nav">
@@ -147,7 +160,12 @@
     
   </div>
 </nav>
+<<<<<<< HEAD:Boostrapsample.php
 <! --Home
+=======
+
+<! --Home--> 
+>>>>>>> c4c8c2aee6f41cb8d831f087775a88f7decf6f0c:Bootstrapsample.php
 <div class="jumbotron text-center">
   <h1>Game Kiosk</h1>
   <p>The premier PS4 game store</p> 
