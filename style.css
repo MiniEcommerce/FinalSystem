@@ -1,4 +1,7 @@
-body {
+.bodyhome {  
+    background-color: black;
+}
+.bodybg{
     background-image: url(images/arcadebg.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -32,4 +35,14 @@ form p {
 
 nav {
     background-color: black;
+}
+
+.txt-color {
+	color: #f1c40f;
+}
+#footer {
+	background-color: #7f8c8d;
+}
+#foot{
+	background-color: #34495e;
 }

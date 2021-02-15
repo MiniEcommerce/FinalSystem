@@ -51,7 +51,7 @@ if(isset($_POST['signup-btn']))
     $userDB = $result->fetch_assoc();
     $stmt->close();
 
-    if($userDB['username'] == $username)
+    if($userDB['username'] == $username && !empty($username))
     {
         $errors['username'] = "Username already existed!";
     }   
@@ -67,7 +67,7 @@ if(isset($_POST['signup-btn']))
     $userDB = $result->fetch_assoc();
     $stmt->close();
 
-    if($userDB['email'] == $email)
+    if($userDB['email'] == $email && !empty($email))
     {
         $errors['email'] = "E-mail already existed!";
     }
@@ -137,7 +137,7 @@ if(isset($_POST['login-btn']))
             $_SESSION['username'] = $user['username'];
             $_SESSION['email'] = $user['email'];
 
-            header("location: index.php");
+            header("location: bootstrapsample.php");
             exit();
 
         }else {

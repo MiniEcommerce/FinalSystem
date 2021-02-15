@@ -10,7 +10,7 @@
 
     <title>Sign-up</title>
 </head>
-<body>
+<body class="bodybg">
 
 <div class="container">
     <div class="row">
