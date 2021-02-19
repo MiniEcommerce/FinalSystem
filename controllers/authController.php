@@ -42,7 +42,7 @@ if(isset($_POST['signup-btn']))
 //---------------------------------------------------------------------------------------------------------//
     $usernameQuery = "SELECT * FROM users WHERE username=? LIMIT 1";
 
-    //PREPARED STATEMENT for the email
+    //PREPARED STATEMENT for the username
     $stmt = $conn->prepare($usernameQuery);
     $stmt->bind_param('s', $username);
     $stmt->execute();
