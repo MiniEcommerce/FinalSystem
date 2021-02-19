@@ -1,0 +1,42 @@
+<style>
+
+body {
+	margin: 0;
+	padding: 0;
+	
+.container{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%)
+	padding:20px;
+	box-sizing: border-box;
+	background: black;
+	border-radius: 4px;
+	box-shadow: 0 5px 15px rgba(0,0,0,.5);
+	display: flex;
+
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+p {
+  font-size: 14px;
+}
+.txt-color {
+	color: #f1c40f;
+}
+#footer {
+	background-color: #7f8c8d;
+}
+#foot{
+	background-color: #34495e;
+}
+
+</style>
