@@ -74,7 +74,7 @@
                  <p>Call of Duty: Modern Warfare is a 2019 first-person shooter video game developed by Infinity Ward and published by Activision. Serving as the sixteenth overall installment in the Call of Duty series, as well as a reboot of the Modern Warfare sub-series, it was released on October 25, 2019, for Microsoft Windows, PlayStation 4, and Xbox One.</p>
                  <div class="quantity yellow-text text-yellow lighten-2">
                     <p>Quantity</p>
-                    <input type="number" min="1" max="9" step="1" value="1">
+                    <input type="number" class="white-text text-white" min="1" max="9" step="1" value="1">
                     <button class="btn waves-effect waves-light" type="submit" name="action">Buy
                           <i class="material-icons right"></i>
                    </button>
@@ -109,7 +109,7 @@
                  <p>Final Fantasy VII Remake is a 2020 action role-playing game developed and published by Square Enix. It is the first in a planned series of games remaking the 1997 PlayStation game Final Fantasy VII. Set in the dystopian cyberpunk metropolis of Midgar, players control mercenary Cloud Strife. He joins AVALANCHE, an eco-terrorist group trying to stop the powerful megacorporation Shinra from using the planet's life essence as an energy source. The gameplay combines real-time action with strategic and role-playing elements.</p>
                  <div class="quantity yellow-text text-yellow lighten-2">
                     <p>Quantity</p>
-                    <input type="number" min="1" max="9" step="1" value="1">
+                    <input type="number" class="white-text text-white" min="1" max="9" step="1" value="1">
                     <button class="btn waves-effect waves-light" type="submit" name="action">Buy
                           <i class="material-icons right"></i>
                    </button>
@@ -144,7 +144,7 @@
                  <p>Tekken 7 (鉄拳7) is a fighting game developed and published by Bandai Namco Entertainment. It is the ninth overall installment in the Tekken series. Tekken 7 had a limited arcade release in March 2015. An updated arcade version, Tekken 7: Fated Retribution, was released in July 2016, and features expanded content including new stages, costumes, items and characters. The home versions released for PlayStation 4, Xbox One and Microsoft Windows in June 2017 were based on Fated Retribution.</p>
                  <div class="quantity yellow-text text-yellow lighten-2">
                     <p>Quantity</p>
-                    <input type="number" min="1" max="9" step="1" value="1">
+                    <input type="number" class="white-text text-white" min="1" max="9" step="1" value="1">
                     <button class="btn waves-effect waves-light" type="submit" name="action">Buy
                           <i class="material-icons right"></i>
                    </button>
@@ -153,27 +153,6 @@
           </div>
       </div>
 
-
-   
-  <!--
-
-    <div class="col m4">
-      <div class="card h-100 grey darken-3">
-        <div class="card-image">
-          <img src="IMG/TEKKEN.jpg">
-          <span class="card-title">Tekken 7</span>
-        </div>
-        <div class="card-content yellow-text text-yellow lighten-2">
-          <p>P3000.00</p>
-        </div>
-        <div class="card-action">
-          <div class="btn btn-danger w-100">Learn more</div>
-        </div>
-      </div>
-    </div>
-  </div>      
-  </div>
--->
       </div>
     </div>    
 <!--ABOUT-->
