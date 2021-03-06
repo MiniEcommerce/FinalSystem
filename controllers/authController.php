@@ -51,7 +51,7 @@ if(isset($_POST['signup-btn']))
     $userDB = $result->fetch_assoc();
     $stmt->close();
 
-    if($userDB['username'] == $username && !empty($username))
+    if($userDB['username'] === $username && !empty($username))
     {
         $errors['username'] = "Username already existed!";
     }   
@@ -67,13 +67,13 @@ if(isset($_POST['signup-btn']))
     $userDB = $result->fetch_assoc();
     $stmt->close();
 
-    if($userDB['email'] == $email && !empty($email))
+    if($userDB['email'] === $email && !empty($email))
     {
         $errors['email'] = "E-mail already existed!";
     }
 //---------------------------------------------------------------------------------------------------------//
 
-    //Checking the Sign up form if how many errors
+    //Execute if there's no error
     if(count($errors) === 0)
     {
         $password = password_hash($password, PASSWORD_DEFAULT);
@@ -94,7 +94,8 @@ if(isset($_POST['signup-btn']))
             header("location: login.php");
             exit();
 
-        }else {
+        }
+        else {
             $errors['db_error'] = "Database error: Failed to Register";
         }
         
@@ -137,7 +138,7 @@ if(isset($_POST['login-btn']))
             $_SESSION['username'] = $user['username'];
             $_SESSION['email'] = $user['email'];
 
-            header("location: bootstrapsample.php");
+            header("location: FRONT.php");
             exit();
 
         }else {

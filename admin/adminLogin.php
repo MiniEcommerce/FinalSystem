@@ -1,4 +1,4 @@
-<?php require_once 'controllers/authController.php'; ?>
+<?php require_once 'adminController.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,17 +6,17 @@
     <meta charset="UTF-8">
     <!-- BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
 
-    <title>Log-in</title>
+    <title>Admin Log-in</title>
 </head>
 <body class="bodybg">
 
 <div class="container">
     <div class="row">
         <div class="col-md-4 offset-md-4 form-div login">
-            <form action="login.php" method="post">
-                <h3 class="text-center">Login</h3>
+            <form action="adminLogin.php" method="post">
+                <h3 class="text-center">Admin Login</h3>
 
                 <?php if(count($errors) > 0):?>
                     <div class="alert alert-danger">
@@ -27,20 +27,18 @@
                 <?php endif; ?>
 
                 <div class="form-group">
-                    <label for="username">Username / E-mail</label>
-                    <input type="text" name="username" value="<?php echo $username; ?>" class="form-control form-control-lg">
+                    <label for="username">Admin Username</label>
+                    <input type="text" name="admin_username" value="<?php echo $admin_username; ?>" class="form-control form-control-lg">
                 </div>
 
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" name="password" class="form-control form-control-lg">
+                    <input type="password" name="admin_pass" class="form-control form-control-lg">
                 </div>
 
                 <div class="form-group">
-                    <button type="submit" name="login-btn" class="btn btn-primary btn-lg btn-block">Login</button>
+                    <button type="submit" name="admin-btn" class="btn btn-primary btn-lg btn-block">Login</button>
                 </div>
-
-                <p class="text-center">Doesn't have an Account yet? <a href="signup.php">Sign-up</a></p>
 
             </form>        
         </div>

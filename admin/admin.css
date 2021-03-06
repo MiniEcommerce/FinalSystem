@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper{
+    padding: 2%;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.text-center{
+    text-align: center;
+    margin: 0 auto;
+}
+
+.clearfix{
+    float: none;
+    clear: both;
+}
+
+.tbl-full{
+    width: 100%;
+}
+
+.tbl-30{
+    width: 30%;
+}
+
+table tr th{
+    border-bottom: 1px solid black;
+    padding: 1%;
+    text-align: left;
+}
+
+table tr td{
+    padding: 1%;
+}
+
+.btn-primary{
+    background-color: rgb(84, 171, 197);
+    padding: 1%;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 1%;
+}
+
+.btn-primary:hover{
+    background-color: rgb(91, 99, 196);
+}
+
+.btn-secondary{
+    background-color: lightgreen;
+    padding: 1%;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 1%;
+}
+
+.btn-secondary:hover{
+    background-color: green;
+}
+
+.btn-danger{
+    background-color: lightcoral;
+    padding: 1%;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-danger:hover{
+    background-color: red;
+}
+.success{
+    color: #2ed573;
+}
+.error {
+    color:#ff4757;
+}
+/*CSS for Menu*/
+.menu{
+    text-align: center;
+    border-bottom: 1px solid rgb(21, 24, 27);
+    background-color: rgb(30, 34, 39);
+}
+.menu ul{
+    list-style-type: none;
+    margin: 1% auto;
+}
+.menu ul li{
+    display: inline;
+    padding: 1%;
+}
+.menu ul li a{
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(248, 123, 118);
+}
+.menu ul li a:hover{
+    color: rgb(231, 36, 36);
+}
+
+/*CSS for Main Content*/
+.margin-content{
+    background-color: red;
+    padding: 3% 0;
+}
+
+.col-4{
+    width: 18%;
+    background-color: seagreen;
+    margin: 1%;
+    padding: 2%;
+    float: left;
+}
+
+/*CSS for Footer*/
+.footer{
+    margin: 0 auto;
+    position:fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: rgb(45, 50, 53);
+    color: rgb(236, 125, 125);
+}
