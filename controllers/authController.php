@@ -3,6 +3,7 @@
 session_start();
 
 require 'config/db.php';
+require_once 'controllers/emailController.php';
 
 //$errors will be a global variable
 $errors = array();
@@ -48,10 +49,10 @@ if(isset($_POST['signup-btn']))
     $stmt->execute();
 
     $result = $stmt->get_result();
-    $userDB = $result->fetch_assoc();
+    $userDB = $result->num_rows;
     $stmt->close();
 
-    if($userDB['username'] === $username && !empty($username))
+    if($userDB > 0 && !empty($username))
     {
         $errors['username'] = "Username already existed!";
     }   
@@ -64,10 +65,10 @@ if(isset($_POST['signup-btn']))
     $stmt->execute();
     
     $result = $stmt->get_result();
-    $userDB = $result->fetch_assoc();
+    $userDB = $result->num_rows;
     $stmt->close();
 
-    if($userDB['email'] === $email && !empty($email))
+    if($userDB > 0 && !empty($email))
     {
         $errors['email'] = "E-mail already existed!";
     }
@@ -77,12 +78,14 @@ if(isset($_POST['signup-btn']))
     if(count($errors) === 0)
     {
         $password = password_hash($password, PASSWORD_DEFAULT);
+        $token = bin2hex(random_bytes(50));
+        $verified = 0;
 
-        $sql = "INSERT INTO users (username, password, email) VALUES (?, ?, ?)";
+        $sql = "INSERT INTO users (username, email, password, verified, token) VALUES (?, ?, ?, ?, ?)";
 
         //PREPARED STATEMENT for the insertion of signup values to the database
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param('sss', $username, $password, $email);
+        $stmt->bind_param('sssis', $username, $email, $password, $verified, $token);
         
         if($stmt->execute())
         {
@@ -90,8 +93,11 @@ if(isset($_POST['signup-btn']))
             $_SESSION['id'] = $user_id;
             $_SESSION['username'] = $username;
             $_SESSION['email'] = $email;
+            $_SESSION['verified'] = $verified;
 
-            header("location: login.php");
+            sendVerificationEmail($email, $token);
+
+            header("location: verification.php");
             exit();
 
         }
@@ -102,6 +108,7 @@ if(isset($_POST['signup-btn']))
     }
 
 }
+
 //---------------------------------------------------------------------------------------------------------//
 //---------------------------------------------------------------------------------------------------------//
 // If LOGIN button is clicked
@@ -109,7 +116,6 @@ if(isset($_POST['login-btn']))
 {
     $username = $_POST['username'];
     $password = $_POST['password'];
-    
 
     if(empty($username))
     {
@@ -131,18 +137,34 @@ if(isset($_POST['login-btn']))
 
         $user = $result->fetch_assoc();     //Getting all the data from the Database
 
-        if(password_verify($password, $user['password']))
-        {
-            //If login is successful
-            $_SESSION['id'] = $user['id'];
-            $_SESSION['username'] = $user['username'];
-            $_SESSION['email'] = $user['email'];
+        if($result->num_rows > 0){
+            if(password_verify($password, $user['password']))
+            {
+                //If login is successful
+                $_SESSION['id'] = $user['id'];
+                $_SESSION['username'] = $user['username'];
+                $_SESSION['email'] = $user['email'];
+                $_SESSION['verified'] = $user['verified'];
 
-            header("location: FRONT.php");
-            exit();
-
-        }else {
-            $errors['login_fail'] = "Wrong credentials!";
+                header("location: FRONT.php");
+                exit();
+            }
+            else {
+                $errors['login_fail'] = "Wrong credentials!";
+            }
+        }
+        else{
+            if(empty($username))
+            {
+                $errors['username'] = "Username is Required!";
+            }    
+            if(empty($password))
+            {
+                $errors['password'] = "Password is Required!";
+            }
+            else {
+                $errors['login_fail'] = "Wrong credentials!";
+            }
         }
     }
 }
@@ -155,6 +177,36 @@ if(isset($_GET['Logout']))
     unset($_SESSION['id']);
     unset($_SESSION['username']);
     unset($_SESSION['email']);
+    unset($_SESSION['verified']);
+
     header('location: login.php');
     exit();
+}
+
+// Verify user by token
+function verifyUser($token){
+    global $conn;
+
+    $sql = "SELECT * FROM users WHERE token='$token' LIMIT 1";
+    $result = mysqli_query($conn, $sql);
+
+    if(mysqli_num_rows($result) > 0){
+        $user = mysqli_fetch_assoc($result);
+        $update_query = "UPDATE users SET verified=1 WHERE token='$token'";
+
+        if(mysqli_query($conn, $update_query)){
+             //If login is successful
+             $_SESSION['id'] = $user['id'];
+             $_SESSION['username'] = $user['username'];
+             $_SESSION['email'] = $user['email'];
+             $_SESSION['verified'] = 1;
+ 
+             header("location: FRONT.php");
+             exit();
+        }
+    }
+    else{
+        echo "User not Found!";
+    }
+
 }

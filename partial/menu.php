@@ -1,11 +1,11 @@
 <?php
 require_once 'adminController.php';
 
-if(!isset($_SESSION['admin_id']))
-{
-    header('location: adminLogin.php');
-    exit();
-}
+// if(!isset($_SESSION['admin_id']))
+// {
+//     header('location: adminLogin.php');
+//     exit();
+// }
 
 ?>
 
