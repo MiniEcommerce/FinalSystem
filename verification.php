@@ -6,7 +6,7 @@
     header('location: login.php');
     exit();
   }
-  if(isset($_SESSION['verified']) == 1)
+  if($_SESSION['verified'] == 1)
   {
     header('location: FRONT.php');
     exit();

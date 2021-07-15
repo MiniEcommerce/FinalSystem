@@ -6,11 +6,15 @@ if(!isset($_SESSION['id']))
     header('location: login.php');
     exit();
 }
-
 // Verify the user using token
 if(isset($_GET['token'])){
     $token = $_GET['token'];
     verifyUser($token);
+}
+if($_SESSION['verified'] == 0)
+{
+  header('location: verification.php');
+  exit();
 }
 
 ?>
