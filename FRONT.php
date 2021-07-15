@@ -7,6 +7,12 @@ if(!isset($_SESSION['id']))
     exit();
 }
 
+// Verify the user using token
+if(isset($_GET['token'])){
+    $token = $_GET['token'];
+    verifyUser($token);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +43,7 @@ if(!isset($_SESSION['id']))
          <li><a href="#homepage">Home</a></li>
          <li><a href="#products">Products</a></li>
          <li><a href="#about">About</a></li>
-        <li><a href="FRONT.php?Logout=2">Log-out</a></li>
+        <li><a href="FRONT.php?Logout=1">Log-out</a></li>
         </ul>
       </div>
     </nav>
@@ -155,7 +161,8 @@ if(!isset($_SESSION['id']))
             </div>
 
   </div>
-</div>    
+</div>
+
 <!--ABOUT-->
   <div class="row about">
     <div class="container-fluid">
@@ -193,19 +200,23 @@ if(!isset($_SESSION['id']))
 <!--TEAM-->
   <div class="footertext">
     <h2>About The Team</h2>
-    <p>Our team is composed of 3 members. 2 programmers and a designer. All students from PUPT DICT 2-1 A.Y. 2020-2021 students</p>
+    <p>Our team is composed of 4 members. 3 programmers and a designer. All students from PUPT DICT 2-1 A.Y. 2020-2021 students</p>
   </div><br>
 
   <div class="row footer">
-    <div class="col s4">
+    <div class="col s3">
       <h3>Joshua Concepcion</h3>
       <p>Programmer</p>
     </div>
-    <div class="col s4">
+    <div class="col s3">
       <h3>Rey Vincent Dolz</h3>
       <p>Programmer</p>
     </div>
-    <div class="col s4">
+    <div class="col s3">
+      <h3>Muhammad Said</h3>
+      <p>Programmer</p>
+    </div>
+    <div class="col s3">
       <h3>Eudes Augustine Silerio</h3>
       <p>Designer</p>
     </div>
