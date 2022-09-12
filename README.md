@@ -1,8 +1,6 @@
 <<<<<<< HEAD
-# minisystem
+Minisystem Project for our school subject
 
-Binago ko yung blah blah blah - joshua
-nag dagdag ako ng code blah blah -dolz
 =======
 <p align="center">
   <a href="http://materializecss.com/">
